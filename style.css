@@ -1,0 +1,85 @@
+html, body{
+    font-family: fredoka;
+    max-height: 90vh;   
+}
+
+#calculator{
+    max-width: 350px;
+    margin: 3vh auto 0 auto;
+    box-shadow: 0px 0px 20px 0px rgb(75, 75, 75);
+    border: 8px solid;
+    border-radius: 10px;
+}
+ #display{
+     height: 70px;
+     padding: 16px 8px;
+     line-height: 70px;
+     background-color: rgba(36, 36, 36, 0.948);
+     display: flex;
+     align-items: end;
+     justify-content: center;
+     flex-direction:column;
+     gap: 50px;
+     line-height: 0px;
+
+ }
+.cur{
+    font-size: 25px;
+    color: white;
+}
+.prev{
+    font-size: 20px;
+    color: white;
+
+}
+#buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+#delete{
+    border-top: 5px solid;
+    border-bottom: 5px solid;
+}
+.del-btn{
+    border: 2px solid;
+    border-radius: 50px;
+    padding: 10px;
+    width: 70px;
+    display: flex;
+    justify-content: center;    
+    background-color: #5555ff;
+    color: white;
+    cursor: pointer;
+    line-height: 20px;
+    font-size: 20px;
+
+}
+#delete{
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+.button{
+    border: 0.5px solid rgb(36, 36, 36);
+    line-height: 100px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#equal{
+    background-color: #5555ff;
+    color: white;
+    
+}
+.button:hover, .del-btn:hover{
+    background-color: rgb(36, 36, 36);
+    transition: ease-in-out .5s;
+    color: white;
+}
+#equal:hover{
+    background-color: rgb(36, 36, 36);
+    transition: ease-in-out .5s;
+    color: white;
+}
