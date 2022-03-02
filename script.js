@@ -7,50 +7,49 @@ const clearbtn = document.getElementById("clear")
 const delbtn = document.getElementById("del")
 const punc = document.getElementById("punctuation")
 
-
 let preValue = "";
 let curValue = "";
 let operator = "";
 
 //append numbers and manage operrators
 
-numBtn.forEach(btn => {
-    
-    btn.addEventListener("click", () => {
 
-                //visual
-                curOperation.textContent += btn.textContent
-                //logic
-                curValue += btn.textContent;
-                console.log(curValue)
-           
-    })
-                
+function appendNum(num){
+    curOperation.textContent += num.textContent
+    //logic
+    curValue += num.textContent;
+    console.log(curValue)
+}
+
+numBtn.forEach(btn => {  
+    btn.addEventListener("click", () => appendNum(btn))            
 })
 
-opBtn.forEach(btn => {
-    btn.addEventListener("click", () => {
-        if (operator == ""){
-        operator += btn.textContent;
+
+function appendOp(ope){
+    if (operator == ""){
+        operator += ope.textContent;
         console.log(operator);
 
-        
         preValue = curValue;
         preOperation.textContent = `${preValue} ${operator}`;
         curValue = "";
         curOperation.textContent = "";
         } return
 
-    })
+}
 
+opBtn.forEach(btn => {
+    btn.addEventListener("click", () => appendOp(btn))
 })
+
+
 
 //puntuation
 
 punc.addEventListener("click", punctuation)
 
 function punctuation(){
-
 
     if (curOperation.textContent === "" && curValue === ""){
         curOperation.textContent = "0"
@@ -67,7 +66,6 @@ function punctuation(){
 equalbtn.addEventListener("click", validate)
 
 function validate(){
-
 
     if (operator === "÷" && curValue == "0") {
         alert("You can't divide by 0")
